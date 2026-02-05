@@ -139,10 +139,27 @@ const OrderLookup = () => {
                   <Package className="w-5 h-5 text-muted-foreground" />
                   <div>
                     <p className="text-sm text-muted-foreground">Pedido</p>
+                    <p className="font-mono font-medium">
+                      {searchedOrder.id}
+                    </p>
                   </div>
                 </div>
               </div>
             </CardHeader>
+            <div
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium ${
+                    searchedOrder.status === 'APROVADO'
+                      ? 'bg-green-100 text-green-700'
+                      : 'bg-red-100 text-red-700'
+                  }`}
+                >
+                  {searchedOrder.status === 'APROVADO' ? (
+                    <CheckCircle className="w-4 h-4" />
+                  ) : (
+                    <XCircle className="w-4 h-4" />
+                  )}
+                  {searchedOrder.status}
+                </div>
             <CardContent className="space-y-6">
               {/* Car Image */}
               <div className="bg-secondary/30 rounded-lg p-4">

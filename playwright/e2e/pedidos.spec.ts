@@ -14,11 +14,11 @@ test('deve consultar um pedido aprovado', async ({ page }) => {
   await page.getByRole('button', { name: 'Buscar Pedido' }).click();
 
   // Assert
-  // await expect(page.getByTestId('order-result-id')).toBeVisible({timeout: 30_000})
+  // await expect(page.getByTestId('order-result-id')).toBeVisible({timeout: 30000})
   // await expect(page.getByTestId('order-result-id')).toContainText('VLO-VWPGNC')
-  await expect(page.getByTestId('order-result-VLO-VWPGNC')).toContainText('Pedido');
+  await expect(page.getByText('VLO-VWPGNC')).toBeVisible({timeout: 10000})
   
-  // await expect(page.getByTestId('order-result-status')).toBeVisible({timeout: 30_000})
+  // await expect(page.getByTestId('order-result-status')).toBeVisible({timeout: 30000})
   // await expect(page.getByTestId('order-result-status')).toContainText('APROVADO')
-  await expect(page.getByRole('img', { name: 'Velô Sprint' })).toBeVisible();
+  await expect(page.getByText('APROVADO')).toBeVisible()
 })
