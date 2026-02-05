@@ -36,7 +36,7 @@ yarn install
 yarn dev
 ```
 
-Acesse: `http://localhost:5174`
+Acesse: `http://localhost:5173`
 
 ---
 
