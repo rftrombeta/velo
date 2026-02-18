@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import InputMask from 'react-input-mask';
+import InputMaskLib from 'react-input-mask';
 import { ArrowLeft, Loader2 } from 'lucide-react';
 import { z } from 'zod';
 import { cn } from '@/lib/utils';
@@ -8,6 +8,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
+
+// Type assertion para resolver incompatibilidade com TypeScript
+const InputMask = InputMaskLib as any;
 import { useToast } from '@/hooks/use-toast';
 import {
   Select,
@@ -303,7 +306,7 @@ const Order = () => {
                       value={formData.phone}
                       onChange={(e) => handleChange('phone', e.target.value)}
                     >
-                      {(inputProps: React.InputHTMLAttributes<HTMLInputElement>) => (
+                      {(inputProps: any) => (
                         <Input
                           {...inputProps}
                           id="phone"
@@ -321,7 +324,7 @@ const Order = () => {
                       value={formData.cpf}
                       onChange={(e) => handleChange('cpf', e.target.value)}
                     >
-                      {(inputProps: React.InputHTMLAttributes<HTMLInputElement>) => (
+                      {(inputProps: any) => (
                         <Input
                           {...inputProps}
                           id="cpf"
