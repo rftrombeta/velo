@@ -26,11 +26,30 @@ Uma SPA (Single Page Application) que permite:
 
 ---
 
+## Pré-requisitos
+
+Antes de iniciar, tenha instalado:
+
+- **Node.js** (recomendado: `20.x` | mínimo: `18.18+`)
+- **Yarn** (`1.22+`)
+
+Valide no terminal:
+
+```bash
+node -v
+yarn -v
+```
+
+---
+
 ## Instalação
 
 ```bash
 # Instalar dependências
 yarn install
+
+# Instalar navegador usado nos testes E2E (Playwright)
+yarn playwright install chromium
 
 # Rodar em desenvolvimento
 yarn dev
@@ -154,7 +173,7 @@ Landing → Configurador → Checkout → Análise de Crédito → Confirmação
 ## Scripts
 
 ```bash
-npm run dev      # Desenvolvimento
-npm run build    # Build de produção
-npm run lint     # Verificar código
+yarn dev      # Desenvolvimento
+yarn build    # Build de produção
+yarn lint     # Verificar código
 ```
